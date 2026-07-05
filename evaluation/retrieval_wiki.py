@@ -34,7 +34,7 @@ def load_corpus(corpus_path: str):
         data_files=corpus_path,
         split="train",
         num_proc=16,
-        cache_dir='cache/huggingface'
+        cache_dir=os.getenv('HF_HOME', 'cache/huggingface')
     )
     return corpus
 

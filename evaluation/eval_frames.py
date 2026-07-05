@@ -39,12 +39,12 @@ MODEL_TYPE = None
 MODEL_MAPPING = None
 TOOL_PRICING = None
 vllm_model_configs = None
-with open('tools.json') as f:
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tools.json')) as f:
     raw_tools = json.load(f)
 tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen3-8B")
 oss_client = OpenAI(
-  base_url = "https://integrate.api.nvidia.com/v1",
-  api_key = os.getenv("OSS_KEY")
+  base_url = os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
+  api_key = os.getenv("OPENROUTER_API_KEY")
 )
 
 MODEL_MAPPING = {
@@ -185,7 +185,7 @@ def call_tool(arguments):
                 while not response:
                     try:
                         response = oss_client.chat.completions.create(
-                            model="nvdev/qwen/qwen2.5-coder-32b-instruct", 
+                            model="qwen/qwen-2.5-coder-32b-instruct",
                             messages=[{"role":"user","content":prompt}],temperature=0.2,
                             top_p=0.7,
                             max_tokens=8000,
@@ -295,7 +295,7 @@ def call_tool(arguments):
                 while not response:
                     try:
                         response = client.chat.completions.create(
-                            model="nvdev/meta/llama-3.3-70b-instruct", 
+                            model="meta-llama/llama-3.3-70b-instruct",
                             messages=[{"role":"user","content":prompt}],temperature=0.2,
                             top_p=0.7,
                             max_tokens=40000,

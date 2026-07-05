@@ -98,3 +98,7 @@ htmlcov/
 
 # Slurm job files
 slurm-*.out
+
+# Local secrets / config (do not commit)
+.env
+keys/
