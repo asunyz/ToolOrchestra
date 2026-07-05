@@ -102,3 +102,6 @@ slurm-*.out
 # Local secrets / config (do not commit)
 .env
 keys/
+
+# Claude Code: keep shared settings (.claude/settings.json), ignore personal ones
+.claude/settings.local.json
