@@ -1,0 +1,22 @@
+{
+  "all_tool_calls": [
+    [
+      {
+        "name": "search",
+        "arguments": {
+          "model": "search-2",
+          "query": "record label of Dismal Euphony's third studio album"
+        }
+      }
+    ],
+    [
+      {
+        "name": "answer",
+        "arguments": {
+          "model": "answer-1"
+        }
+      }
+    ]
+  ],
+  "correct": false
+}

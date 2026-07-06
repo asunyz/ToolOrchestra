@@ -1,0 +1,22 @@
+{
+  "all_tool_calls": [
+    [
+      {
+        "name": "search",
+        "arguments": {
+          "model": "search-2",
+          "query": "15th first lady of the United States"
+        }
+      }
+    ],
+    [
+      {
+        "name": "answer",
+        "arguments": {
+          "model": "answer-1"
+        }
+      }
+    ]
+  ],
+  "correct": true
+}

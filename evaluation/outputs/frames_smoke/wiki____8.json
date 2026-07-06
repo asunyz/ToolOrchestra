@@ -1,0 +1,14 @@
+{
+  "all_tool_calls": [
+    [
+      {
+        "name": "answer",
+        "arguments": {
+          "model": "answer-1",
+          "answer": "12"
+        }
+      }
+    ]
+  ],
+  "correct": true
+}

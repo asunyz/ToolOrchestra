@@ -1,0 +1,22 @@
+{
+  "all_tool_calls": [
+    [
+      {
+        "name": "search",
+        "arguments": {
+          "model": "search-2",
+          "query": "who discovered zirconium and any other elements in the same year"
+        }
+      }
+    ],
+    [
+      {
+        "name": "answer",
+        "arguments": {
+          "model": "answer-1"
+        }
+      }
+    ]
+  ],
+  "correct": true
+}

@@ -1,0 +1,30 @@
+{
+  "all_tool_calls": [
+    [
+      {
+        "name": "search",
+        "arguments": {
+          "model": "search-2",
+          "query": "Gunna's high school"
+        }
+      }
+    ],
+    [
+      {
+        "name": "enhance_reasoning",
+        "arguments": {
+          "model": "reasoner-3"
+        }
+      }
+    ],
+    [
+      {
+        "name": "answer",
+        "arguments": {
+          "model": "answer-1"
+        }
+      }
+    ]
+  ],
+  "correct": true
+}

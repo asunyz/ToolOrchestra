@@ -1,0 +1,38 @@
+{
+  "all_tool_calls": [
+    [
+      {
+        "name": "search",
+        "arguments": {
+          "model": "search-2",
+          "query": "Dewey decimal classification for Jane Eyre by Charlotte Bronte published in 1847"
+        }
+      }
+    ],
+    [
+      {
+        "name": "enhance_reasoning",
+        "arguments": {
+          "model": "reasoner-3"
+        }
+      }
+    ],
+    [
+      {
+        "name": "enhance_reasoning",
+        "arguments": {
+          "model": "reasoner-3"
+        }
+      }
+    ],
+    [
+      {
+        "name": "answer",
+        "arguments": {
+          "model": "answer-1"
+        }
+      }
+    ]
+  ],
+  "correct": false
+}
