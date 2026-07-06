@@ -1,0 +1,10 @@
+{
+"retrieval": [{"ip_addr": "127.0.0.1", "port": "1401"}],
+"Qwen/Qwen3-32B": [{"ip_addr": "127.0.0.1", "port": "1"}],
+"Qwen/Qwen2.5-Coder-32B-Instruct": [{"ip_addr": "127.0.0.1", "port": "1"}],
+"meta-llama/Llama-3.3-70B-Instruct": [{"ip_addr": "127.0.0.1", "port": "1"}],
+"Qwen/Qwen2.5-Math-72B-Instruct": [{"ip_addr": "127.0.0.1", "port": "1404"}],
+"Qwen/Qwen2.5-Math-7B-Instruct": [{"ip_addr": "127.0.0.1", "port": "1404"}],
+"/workspace/Orchestrator-8B": [{"ip_addr": "127.0.0.1", "port": "1406"}],
+"vllm_model_config_path": "model_configs/serve_frames.json"
+}

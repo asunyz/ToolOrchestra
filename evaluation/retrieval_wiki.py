@@ -64,7 +64,7 @@ def load_docs(corpus, doc_idxs):
 def load_model(model_path: str, use_fp16: bool = False):
     if model_path in ['Qwen/Qwen3-Embedding-8B']:
         tokenizer = AutoTokenizer.from_pretrained(model_path, padding_side='left')
-        model = AutoModel.from_pretrained(model_path, attn_implementation="flash_attention_2",
+        model = AutoModel.from_pretrained(model_path, attn_implementation="sdpa",
                                           torch_dtype=torch.float16).cuda()
     else:
         model_config = AutoConfig.from_pretrained(model_path, trust_remote_code=True)
@@ -275,7 +275,7 @@ class Config:
             corpus_path: str = "./data/corpus.jsonl",
             dataset_path: str = "./data",
             data_split: str = "train",
-            faiss_gpu: bool = True,
+            faiss_gpu: bool = False, 
             retrieval_model_path: str = "./model",
             retrieval_pooling_method: str = "mean",
             retrieval_query_max_length: int = 32768,
@@ -361,7 +361,7 @@ config = Config(
     index_path=os.path.join(os.environ.get('INDEX_DIR',None),'wiki.index'),
     corpus_path=os.path.join(os.environ.get('INDEX_DIR',None),'wiki.jsonl'),
     retrieval_topk=3,
-    faiss_gpu=True,
+    faiss_gpu=False,
     retrieval_model_path='Qwen/Qwen3-Embedding-8B',
     retrieval_pooling_method="mean",
     retrieval_query_max_length=32768,
