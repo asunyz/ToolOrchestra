@@ -154,6 +154,16 @@ def get_llm_response(model, messages, temperature=1.0, return_raw_response=False
                     return chat_completion
                 answer = chat_completion.choices[0].message.content
             except Exception as error:
+                msg = str(error)
+                # Context-length overflow is not transient — shrink the output
+                # budget and retry instead of looping on the same request.
+                if 'context length' in msg or 'maximum context' in msg:
+                    if max_length > 512:
+                        max_length = max(512, max_length // 2)
+                        print('[OpenRouter] context overflow -> reducing max_tokens to', max_length)
+                        continue
+                    print('[OpenRouter] input alone exceeds context; skipping this call')
+                    return None if return_raw_response else ''
                 print('[OpenRouter ERROR]', model, '->', or_model, error)
                 time.sleep(30)
         return answer
